@@ -52,6 +52,10 @@ const muggerResponses: Record<Outcome, Record<Encounter, string[]>> = {
     repeat: [],
   },
   // Not needed
+  [Outcome.Unsupported] : {
+    initial: [],
+    repeat: [], 
+   },
   [Outcome.Drugged]: {
     initial: ["Its about sending a message!"],
     repeat: [],
@@ -117,6 +121,10 @@ const copResponses: Record<Outcome, Record<Encounter, string[]>> = {
     initial: ["Its about sending a message!"],
     repeat: [],
   },
+  [Outcome.Unsupported] : {
+    initial: [],
+    repeat: [], 
+   },
   // Not needed
   [Outcome.Drugged]: {
     initial: [],
@@ -161,6 +169,10 @@ const goblinResponses: Record<Outcome, Record<Encounter, string[]>> = {
     initial: [],
     repeat: [],
   },
+  [Outcome.Unsupported] : {
+    initial: [],
+    repeat: [], 
+   },
   // Not needed
   [Outcome.Drugged]: {
     initial: [
