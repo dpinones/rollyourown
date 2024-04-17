@@ -275,6 +275,9 @@ export default function Decision() {
           //     icon: attackItem ? getShopItem(attackItem.id, attackItem.level).icon : Fist,
           //   });
           // addCombatLog({ text: `You lost ${consequenceEvent.healthLoss}HP!`, color: "red", icon: Heart });
+          return router.replace(
+            `/${gameId}/event/consequence?outcome=${consequenceEvent.outcome}&status=${playerStatus}`,
+          );
           break;
       }
     } catch (e) {

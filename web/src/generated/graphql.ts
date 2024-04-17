@@ -1165,6 +1165,7 @@ export const PlayerPropsFragmentDoc = `
   speed
   wanted
   game_over
+  is_drugged
 }
     `;
 export const GlobalScoresDocument = `

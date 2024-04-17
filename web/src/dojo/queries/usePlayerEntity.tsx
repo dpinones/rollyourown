@@ -85,6 +85,7 @@ export class PlayerEntity {
     this.locationId = player.location_id === "Home" ? undefined : player.location_id;
     this.status = player.status;
     this.wanted = player.wanted;
+    this.isDrugged = player.is_drugged;
     this.gameOver = player.game_over;
     return this;
   }
