@@ -176,9 +176,11 @@ export type Game = {
   entity?: Maybe<World__Entity>;
   game_id?: Maybe<Scalars['u32']>;
   game_mode?: Maybe<Scalars['Enum']>;
+  goblin_appeared?: Maybe<Scalars['bool']>;
   max_players?: Maybe<Scalars['usize']>;
   max_turns?: Maybe<Scalars['usize']>;
   num_players?: Maybe<Scalars['usize']>;
+  scaling_factor?: Maybe<Scalars['u128']>;
   start_time?: Maybe<Scalars['u64']>;
 };
 
@@ -204,9 +206,11 @@ export enum GameOrderField {
   Creator = 'CREATOR',
   GameId = 'GAME_ID',
   GameMode = 'GAME_MODE',
+  GoblinAppeared = 'GOBLIN_APPEARED',
   MaxPlayers = 'MAX_PLAYERS',
   MaxTurns = 'MAX_TURNS',
   NumPlayers = 'NUM_PLAYERS',
+  ScalingFactor = 'SCALING_FACTOR',
   StartTime = 'START_TIME'
 }
 
@@ -226,6 +230,7 @@ export type GameWhereInput = {
   game_idLTE?: InputMaybe<Scalars['u32']>;
   game_idNEQ?: InputMaybe<Scalars['u32']>;
   game_mode?: InputMaybe<Scalars['Enum']>;
+  goblin_appeared?: InputMaybe<Scalars['bool']>;
   max_players?: InputMaybe<Scalars['usize']>;
   max_playersEQ?: InputMaybe<Scalars['usize']>;
   max_playersGT?: InputMaybe<Scalars['usize']>;
@@ -247,6 +252,13 @@ export type GameWhereInput = {
   num_playersLT?: InputMaybe<Scalars['usize']>;
   num_playersLTE?: InputMaybe<Scalars['usize']>;
   num_playersNEQ?: InputMaybe<Scalars['usize']>;
+  scaling_factor?: InputMaybe<Scalars['u128']>;
+  scaling_factorEQ?: InputMaybe<Scalars['u128']>;
+  scaling_factorGT?: InputMaybe<Scalars['u128']>;
+  scaling_factorGTE?: InputMaybe<Scalars['u128']>;
+  scaling_factorLT?: InputMaybe<Scalars['u128']>;
+  scaling_factorLTE?: InputMaybe<Scalars['u128']>;
+  scaling_factorNEQ?: InputMaybe<Scalars['u128']>;
   start_time?: InputMaybe<Scalars['u64']>;
   start_timeEQ?: InputMaybe<Scalars['u64']>;
   start_timeGT?: InputMaybe<Scalars['u64']>;
@@ -470,6 +482,7 @@ export type Player = {
   game_over?: Maybe<Scalars['bool']>;
   health?: Maybe<Scalars['u8']>;
   hood_id?: Maybe<Scalars['Enum']>;
+  is_drugged?: Maybe<Scalars['bool']>;
   leaderboard_version?: Maybe<Scalars['u32']>;
   location_id?: Maybe<Scalars['Enum']>;
   mainnet_address?: Maybe<Scalars['ContractAddress']>;
@@ -513,6 +526,7 @@ export enum PlayerOrderField {
   GameOver = 'GAME_OVER',
   Health = 'HEALTH',
   HoodId = 'HOOD_ID',
+  IsDrugged = 'IS_DRUGGED',
   LeaderboardVersion = 'LEADERBOARD_VERSION',
   LocationId = 'LOCATION_ID',
   MainnetAddress = 'MAINNET_ADDRESS',
@@ -580,6 +594,7 @@ export type PlayerWhereInput = {
   healthLTE?: InputMaybe<Scalars['u8']>;
   healthNEQ?: InputMaybe<Scalars['u8']>;
   hood_id?: InputMaybe<Scalars['Enum']>;
+  is_drugged?: InputMaybe<Scalars['bool']>;
   leaderboard_version?: InputMaybe<Scalars['u32']>;
   leaderboard_versionEQ?: InputMaybe<Scalars['u32']>;
   leaderboard_versionGT?: InputMaybe<Scalars['u32']>;
@@ -996,7 +1011,7 @@ export type World__QueryRyoMetaModelsArgs = {
 
 
 export type World__QueryTransactionArgs = {
-  id: Scalars['ID'];
+  transactionHash: Scalars['ID'];
 };
 
 

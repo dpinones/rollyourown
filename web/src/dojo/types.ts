@@ -58,9 +58,9 @@ export enum Outcome {
   Escaped,
   Captured,
   Victorious,
+  Unsupported,
   Drugged,
 }
-
 export enum GameMode {
   Test,
   Unlimited

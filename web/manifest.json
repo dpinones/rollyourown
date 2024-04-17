@@ -949,7 +949,7 @@
     {
       "name": "rollyourown::systems::decide::decide",
       "address": "0x513e8a833b22e0e8fc32635427db3531166742cad938d0473b5f2342b8d670d",
-      "class_hash": "0x349ca2f6245e8e10a27217351a8d60efb7db31c39c241564564e7fcb0c6f333",
+      "class_hash": "0x157ce4bfd0c987c9f79e1ddab2a225d24510f69c809b7916fe553e6c914590d",
       "abi": [
         {
           "type": "impl",
@@ -1306,7 +1306,7 @@
     {
       "name": "rollyourown::systems::lobby::lobby",
       "address": "0x49edd91ee46f739b4ef1d945fc462c686fbdbb077a99d420f85e7c3d497795f",
-      "class_hash": "0x68c4b58d86350ab7ac1ad2f5ba0479966edb15fe29307e943d94ad1e9327bf9",
+      "class_hash": "0xe00ffb0a8dafc6b9fcec485e18f16f282e4c0d5a982541e554894b39769b1b",
       "abi": [
         {
           "type": "impl",
@@ -1702,7 +1702,7 @@
     {
       "name": "rollyourown::systems::shop::shop",
       "address": "0x369cb17d0b420599756dc27c11e5be1eb85182b36cb9b12f923aec7b6959f43",
-      "class_hash": "0x4cb16f058ea5bff4e67dd767af449590f15ff76716c8f2490700faff2c276e3",
+      "class_hash": "0x51bde69ff8dc62d493b5418c06493d0c3279d52cf5dbef7b539e412d689126f",
       "abi": [
         {
           "type": "impl",
@@ -2044,7 +2044,7 @@
     {
       "name": "rollyourown::systems::trade::trade",
       "address": "0x37539cbd5f049814c1f0e7890e4b3acd656c4bbd45776c81f24014cf50cb0ef",
-      "class_hash": "0x1504d5047ed0b505917a749cfdb199225170b38f1c69383478b2c28a8df965a",
+      "class_hash": "0x6744678a2d684a767ffb50b0405063e23b24251a5f1b53da59702d7446ae0",
       "abi": [
         {
           "type": "impl",
@@ -2364,7 +2364,7 @@
     {
       "name": "rollyourown::systems::travel::travel",
       "address": "0x4c24c51ab65c7a5ea606ce4b873f85481c0327c14fca2941353a408ce689e10",
-      "class_hash": "0x2b5f66951df85d1d57fb2d12661a484f6023a614847c6b5074ec4d65b389fed",
+      "class_hash": "0x513af83db8d45837db184c21026fede166b198b647d30d95ab10403f1e91053",
       "abi": [
         {
           "type": "impl",
@@ -4583,9 +4583,14 @@
           "name": "game_over",
           "type": "bool",
           "key": false
+        },
+        {
+          "name": "is_drugged",
+          "type": "bool",
+          "key": false
         }
       ],
-      "class_hash": "0x661f8a85ce0c706b18cc83813cda20dcd71b057417ead52a897cbee37dba995",
+      "class_hash": "0x263090f944cfdcbd880d97fda7c8f78221da005354f83a121abf308d33a6a7",
       "abi": [
         {
           "type": "impl",
@@ -4920,6 +4925,10 @@
             },
             {
               "name": "game_over",
+              "type": "core::bool"
+            },
+            {
+              "name": "is_drugged",
               "type": "core::bool"
             }
           ]

@@ -42,6 +42,7 @@ export class PlayerEntity {
 
   wanted: number;
   gameOver: boolean;
+  isDrugged: boolean;
 
   constructor(player: Player, drugs: Drug[], items: ShopItem[], encounters: Encounter[]) {
     this.name = profanity.censor(shortString.decodeShortString(player.name));
@@ -66,6 +67,7 @@ export class PlayerEntity {
 
     this.wanted = player.wanted;
     this.gameOver = player.game_over;
+    this.isDrugged = player.is_drugged;
 
     this.drugs = drugs;
     this.items = items;

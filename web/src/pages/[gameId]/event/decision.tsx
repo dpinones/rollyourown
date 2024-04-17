@@ -36,7 +36,7 @@ function getImageSrc(status: PlayerStatus, encounter: Encounter) {
     case PlayerStatus.BeingArrested:
       return `/images/events/cops${encounter!.level <= 3 ? encounter!.level : 3}.gif`;
     default:
-      return `/images/events/default.gif`; // A default case if none of the above
+      return `/images/events/duende-drug.gif`; // A default case if none of the above
   }
 }
 
