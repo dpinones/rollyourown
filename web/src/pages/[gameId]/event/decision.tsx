@@ -327,7 +327,7 @@ export default function Decision() {
         <VStack w="full" h={["auto", "100%"]} flex={[0, 1]} position="relative">
           <VStack w="full" h={["100%"]}>
             <Inventory />
-            {encounter.encounter_id !== 'Goblin' && <VStack w="full" h="100%">
+            {encounter && encounter.encounter_id !== 'Goblin' && <VStack w="full" h="100%">
               <VStack w="full" alignItems="flex-start">
                 <Text textStyle="subheading" mt={["10px", "30px"]} fontSize="10px" color="neon.500">
                   Combat Log
