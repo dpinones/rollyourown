@@ -123,7 +123,7 @@ mod travel {
 
                         if player.status == PlayerStatus::BeingMugged || player.status == PlayerStatus::BeingArrested {
                             let encounter_settings = EncounterSettingsImpl::get(
-                                game.game_mode, @player, encounter.level
+                                game.game_mode, @player, encounter.level, game.scaling_factor
                             );
 
                             // player lose max(encounter_settings.dmg / 3,1)  HP
