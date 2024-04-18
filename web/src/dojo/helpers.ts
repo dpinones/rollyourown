@@ -227,10 +227,10 @@ export const outcomes: OutcomeInfo[] = [
   },
   {
     title: "You",
-    name: "Took the mushrooms!",
+    name: "Ate the shrooms!",
     type: Outcome.Drugged,
     status: PlayerStatus.BeingDrugged,
-    imageSrc: "/images/events/duende-drug.gif", //update
+    imageSrc: "/images/events/mushroom_hand.png", 
     description: "Have fun!",
     getResponse: (isInitial: boolean) =>
       getGoblinResponses(Outcome.Drugged, isInitial),
@@ -241,7 +241,7 @@ export const outcomes: OutcomeInfo[] = [
     name: "Declined the trip!",
     type: Outcome.Escaped,
     status: PlayerStatus.Normal,
-    imageSrc: "/images/events/duende-drug.gif",
+    imageSrc: "/images/events/mushroom_hand.png",
     description: "Boring!",
     getResponse: (isInitial: boolean) =>
       getGoblinResponses(Outcome.Escaped, isInitial),
