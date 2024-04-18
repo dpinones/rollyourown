@@ -43,7 +43,8 @@ const Layout = ({
   const { playerEntity } = playerEntityStore;
   const [isUserTrippin, setIsUserTrippin] = useState(false);
   const defaultBg = "gray.100"; // A standard, non-trippy background
-  const trippyBg = "linear-gradient(45deg, #ff6fd8, #d783ff, #8a78ff, #78cdff)";
+  // const trippyBg = "linear-gradient(45deg, #ff6fd8, #d783ff, #8a78ff, #78cdff)";
+  const trippyBg = "linear-gradient(45deg, #e6d2ff)";
 
   const container = (
     <Container position="relative" px={["10px", "16px"]} py="16px">
@@ -86,15 +87,15 @@ const Layout = ({
         {isUserTrippin ? (
           <motion.div
             animate={{
-              x: ["0%", "3%", "0%", "-3%", "0%"],
+              x: ["0%", "2%", "1%", "-0.5%", "0%"],
               filter: [
-                "hue-rotate(0deg) brightness(120%)",
-                "hue-rotate(60deg) brightness(100%)",
-                "hue-rotate(180deg) brightness(180%)",
-                "hue-rotate(300deg) brightness(150%)",
-                "hue-rotate(240deg) brightness(140%)",
-                "hue-rotate(120deg) brightness(200%)",
-                "hue-rotate(360deg) brightness(100%)",
+                "hue-rotate(0deg) brightness(125%)",
+                "hue-rotate(60deg) brightness(150%)",
+                "hue-rotate(180deg) brightness(175%)",
+                "hue-rotate(300deg) brightness(200%)",
+                "hue-rotate(240deg) brightness(175%)",
+                "hue-rotate(120deg) brightness(150%)",
+                "hue-rotate(360deg) brightness(125%)",
               ],
             }}
             transition={{
@@ -113,20 +114,18 @@ const Layout = ({
         {isUserTrippin ? (
           <motion.div
             animate={{
-              scale: [1, 1.05, 1.1, 1.05, 1],
-              x: ["0%", "3%", "0%", "-3%", "0%"],
+              scale: [1, 1.02, 1.05, 1.02, 1],
+              x: ["0%", "1%", "0%", "-1%", "0%"],
               filter: [
                 "hue-rotate(0deg) brightness(100%)",
                 "hue-rotate(60deg) brightness(120%)",
-                "hue-rotate(180deg) brightness(150%)",
-                "hue-rotate(300deg) brightness(180%)",
-                "hue-rotate(240deg) brightness(200%)",
-                "hue-rotate(120deg) brightness(140%)",
+                "hue-rotate(180deg) brightness(130%)",
+                "hue-rotate(240deg) brightness(120%)",
                 "hue-rotate(360deg) brightness(100%)",
               ],
             }}
             transition={{
-              duration: 3,
+              duration: 2,
               ease: "linear",
               times: [0, 0.25, 0.5, 0.75, 1],
               repeat: Infinity,
