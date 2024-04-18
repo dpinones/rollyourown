@@ -37,7 +37,7 @@ function getImageSrc(status: PlayerStatus, encounter: Encounter) {
     case PlayerStatus.BeingArrested:
       return `/images/events/cops${encounter!.level <= 3 ? encounter!.level : 3}.gif`;
     default:
-      return `/images/events/duende-drug.gif`; // A default case if none of the above
+      return `/images/events/blank.png`; // A default case if none of the above
   }
 }
 
@@ -123,6 +123,7 @@ export default function Decision() {
   }, [playerEntity, playerEntity?.items]);
 
   useEffect(() => {
+    {console.log(`player status: ${status}`)}
     if (playerEntity && playerEntity.encounters && !isPending) {
       if (status === PlayerStatus.BeingMugged) {
         setEncounter(playerEntity.encounters.find((i) => i.encounter_id === "Gang"));
@@ -364,8 +365,7 @@ export default function Decision() {
           </VStack>
 
           <Box minH="60px" />
-
-          {!PlayerStatus.BeingDrugged ? (
+          {status !== PlayerStatus.BeingDrugged ? (
             <Footer position={["fixed", "absolute"]} p={["8px !important", "0"]}>
               <Button
                 w="full"
