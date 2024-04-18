@@ -299,9 +299,9 @@ const LocationPrices = ({ prices, isCurrentLocation }: { prices: MarketPriceInfo
                     </Text>
 
                   )}
-                  {drug.diff < 0 && 
+                  {drug.diff && drug.diff < 0 && 
                   <Text opacity="0.5" color={ drug.diff >= 0 ? "neon.200" : "red"}>⬇</Text>}
-                  {drug.diff > 0 && 
+                  {drug.diff && drug.diff > 0 && 
                   <Text opacity="0.5" color={ drug.diff >= 0 ? "neon.200" : "red"}>⬆</Text>}
                 </HStack>
               </GridItem>
