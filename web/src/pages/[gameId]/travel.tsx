@@ -297,7 +297,12 @@ const LocationPrices = ({ prices, isCurrentLocation }: { prices: MarketPriceInfo
                     <Text opacity="0.5" color={drug.diff >= 0 ? "neon.200" : "red"}>
                       ({!isPercentage ? `${drug.percentage.toFixed(0)}%` : formatCash(drug.diff)})
                     </Text>
+
                   )}
+                  {drug.diff < 0 && 
+                  <Text opacity="0.5" color={ drug.diff >= 0 ? "neon.200" : "red"}>⬇</Text>}
+                  {drug.diff > 0 && 
+                  <Text opacity="0.5" color={ drug.diff >= 0 ? "neon.200" : "red"}>⬆</Text>}
                 </HStack>
               </GridItem>
             );
