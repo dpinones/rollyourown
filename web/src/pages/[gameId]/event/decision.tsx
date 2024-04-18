@@ -326,7 +326,7 @@ export default function Decision() {
         <VStack w="full" h={["auto", "100%"]} flex={[0, 1]} position="relative">
           <VStack w="full" h={["100%"]}>
             <Inventory />
-            <VStack w="full" h="100%">
+            {encounter.encounter_id !== 'Goblin' && <VStack w="full" h="100%">
               <VStack w="full" alignItems="flex-start">
                 <Text textStyle="subheading" mt={["10px", "30px"]} fontSize="10px" color="neon.500">
                   Combat Log
@@ -360,7 +360,7 @@ export default function Decision() {
                   </VStack>
                 </Card>
               </VStack>
-            </VStack>
+            </VStack>}
           </VStack>
 
           <Box minH="60px" />
@@ -485,39 +485,61 @@ const Encounter = ({
             </Box>
           </>
         )}
-
-        <Image
-          src={imageSrc}
-          alt="adverse event"
-          mt={[0, "10px"]}
-          maxH={["auto", "calc(100vh - 400px)"]}
-          w={[160, "auto"]}
-          h={[160, 400]}
-        />
-
+          {!IsMobile() && encounter.encounter_id === 'Goblin' &&
+            <Image
+              src={imageSrc}
+              alt="adverse event"
+              mt={[0, "10px"]}
+              pt={125}
+              maxH={["auto", "calc(100vh - 400px)"]}
+              w={[160, "auto"]}
+              h={[160, 400]}
+            />
+          }
+          { IsMobile() && encounter.encounter_id === 'Goblin' &&
+            <Image
+              src={imageSrc}
+              alt="adverse event"
+              mt={[0, "10px"]}
+              maxH={["auto", "calc(100vh - 400px)"]}
+              w={[160, "auto"]}
+              h={[160, 400]}
+            />
+          }
+          {encounter.encounter_id !== 'Goblin' &&
+            <Image
+              src={imageSrc}
+              alt="adverse event"
+              mt={[0, "10px"]}
+              maxH={["auto", "calc(100vh - 400px)"]}
+              w={[160, "auto"]}
+              h={[160, 400]}
+            />
+          }
         <VStack w="full">
           <Card alignItems="center" w={["full", "auto"]} justify="center" mt={["20px", "40px"]}>
             <VStack w="full" gap="0">
+              {encounter.encounter_id != 'Goblin' && 
               <HStack w="full" px="16px" py="8px" alignItems={["flex-start", "center"]} flexDir={["column", "row"]}>
-                <HStack>
-                  <Siren /> <Text> LVL {encounter.level}</Text>
-                </HStack>
-                {IsMobile() ? (
-                  <Divider w="full" orientation="horizontal" borderWidth="1px" borderColor="neon.600" />
-                ) : (
-                  <Divider h="26px" orientation="vertical" borderWidth="1px" borderColor="neon.600" />
-                )}
-                <CashIndicator cash={formatCash(encounter.payout)} />
-                {IsMobile() ? (
-                  <Divider w="full" orientation="horizontal" borderWidth="1px" borderColor="neon.600" />
-                ) : (
-                  <Divider h="26px" orientation="vertical" borderWidth="1px" borderColor="neon.600" />
-                )}
-                <HealthIndicator
-                  health={encounter.health}
-                  maxHealth={getEncounterNPCMaxHealth(encounter.level, playerEntity.turn)}
-                />
+              <HStack>
+                <Siren /> <Text> LVL {encounter.level}</Text>
               </HStack>
+              {IsMobile() ? (
+                <Divider w="full" orientation="horizontal" borderWidth="1px" borderColor="neon.600" />
+              ) : (
+                <Divider h="26px" orientation="vertical" borderWidth="1px" borderColor="neon.600" />
+              )}
+              <CashIndicator cash={formatCash(encounter.payout)} />
+              {IsMobile() ? (
+                <Divider w="full" orientation="horizontal" borderWidth="1px" borderColor="neon.600" />
+              ) : (
+                <Divider h="26px" orientation="vertical" borderWidth="1px" borderColor="neon.600" />
+              )}
+              <HealthIndicator
+                health={encounter.health}
+                maxHealth={getEncounterNPCMaxHealth(encounter.level, playerEntity.turn)}
+              />
+            </HStack>}
               {!IsMobile() && (
                 <Box w="full" px="10px">
                   <Divider w="full" orientation="horizontal" borderWidth="1px" borderColor="neon.600" />
