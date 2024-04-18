@@ -2,7 +2,6 @@ import { Action, Outcome, PlayerStatus } from "./dojo/types";
 
 type Encounter = "initial" | "repeat";
 
-
 const muggerResponses: Record<Outcome, Record<Encounter, string[]>> = {
   [Outcome.Escaped]: {
     initial: [
@@ -52,10 +51,10 @@ const muggerResponses: Record<Outcome, Record<Encounter, string[]>> = {
     repeat: [],
   },
   // Not needed
-  [Outcome.Unsupported] : {
+  [Outcome.Unsupported]: {
     initial: [],
-    repeat: [], 
-   },
+    repeat: [],
+  },
   [Outcome.Drugged]: {
     initial: ["Its about sending a message!"],
     repeat: [],
@@ -121,10 +120,10 @@ const copResponses: Record<Outcome, Record<Encounter, string[]>> = {
     initial: ["Its about sending a message!"],
     repeat: [],
   },
-  [Outcome.Unsupported] : {
+  [Outcome.Unsupported]: {
     initial: [],
-    repeat: [], 
-   },
+    repeat: [],
+  },
   // Not needed
   [Outcome.Drugged]: {
     initial: [],
@@ -169,10 +168,10 @@ const goblinResponses: Record<Outcome, Record<Encounter, string[]>> = {
     initial: [],
     repeat: [],
   },
-  [Outcome.Unsupported] : {
+  [Outcome.Unsupported]: {
     initial: [],
-    repeat: [], 
-   },
+    repeat: [],
+  },
   // Not needed
   [Outcome.Drugged]: {
     initial: [
@@ -212,10 +211,7 @@ function getResponse(
   return lines[getRandomIdx(lines.length)];
 }
 
-export function getMuggerResponses(
-  outcome: Outcome,
-  isInitial: boolean,
-): string {
+export function getMuggerResponses(outcome: Outcome, isInitial: boolean): string {
   return getResponse(outcome, isInitial, muggerResponses);
 }
 
@@ -227,24 +223,20 @@ export function getGoblinResponses(outcome: Outcome, isInitial: boolean): string
   return getResponse(outcome, isInitial, goblinResponses);
 }
 
-
-
-
-
 const encounterSentences: Record<PlayerStatus, Record<Action, string[]>> = {
   [PlayerStatus.Normal]: {
     [Action.Pay]: [],
     [Action.Run]: [],
     [Action.Fight]: [],
-    [Action.Accept]:[],
-    [Action.Decline]: []
+    [Action.Accept]: [],
+    [Action.Decline]: [],
   },
   [PlayerStatus.AtPawnshop]: {
     [Action.Pay]: [],
     [Action.Run]: [],
     [Action.Fight]: [],
-    [Action.Accept]:[],
-    [Action.Decline]: []
+    [Action.Accept]: [],
+    [Action.Decline]: [],
   },
   [PlayerStatus.BeingMugged]: {
     [Action.Pay]: [
@@ -258,7 +250,7 @@ const encounterSentences: Record<PlayerStatus, Record<Action, string[]>> = {
       "You'll be seeing me again real soon to collect. Count on it.",
       "Don't go thinking this payment buys you protection. It don't.",
       "This payment don't even begin to make up for what you owe me.",
-      "This is just a down payment on the beating I still owe you."
+      "This is just a down payment on the beating I still owe you.",
     ],
     [Action.Run]: [
       "Go ahead and run you slippery rat bastard!",
@@ -275,8 +267,7 @@ const encounterSentences: Record<PlayerStatus, Record<Action, string[]>> = {
       "The streets talk, and word travels fast. I'll find you.",
       "You'll regret the day you tried to hustle on my block.",
       "My reach extends farther than you can imagine. Nowhere is safe.",
-      "I'm gonna make you regret ever stepping foot in my territory."
-
+      "I'm gonna make you regret ever stepping foot in my territory.",
     ],
     [Action.Fight]: [
       "Give me what you have before I turn yo ass to swiss cheese.",
@@ -292,10 +283,10 @@ const encounterSentences: Record<PlayerStatus, Record<Action, string[]>> = {
       "Trying to hustle on my block right under my nose?! You got guts, I'll give you that.",
       "The boys and I are gonna have fun teaching you what happens when you steal from us.",
       "I'll make an example out of you. Show everyone what happens when they cross us.",
-      "Stealing business and disrespecting me in my own neighborhood? Huge mistake."
+      "Stealing business and disrespecting me in my own neighborhood? Huge mistake.",
     ],
-    [Action.Accept]:[],
-    [Action.Decline]: []
+    [Action.Accept]: [],
+    [Action.Decline]: [],
   },
   [PlayerStatus.BeingArrested]: {
     [Action.Pay]: [
@@ -317,7 +308,6 @@ const encounterSentences: Record<PlayerStatus, Record<Action, string[]>> = {
       "You ain't getting far, punk. I'll hunt you down if it's the last thing I do!",
       "Don't get too comfortable out there. We know these streets better than you.",
       "Run all you want, but next time I'm letting the police dogs off the leash to hunt you down.",
-
     ],
     [Action.Fight]: [
       "You have the right to remain silent. Anything you say can and will be used against you in a court of law.",
@@ -330,13 +320,13 @@ const encounterSentences: Record<PlayerStatus, Record<Action, string[]>> = {
       "And you call yourself a drug dealer? Pathetic.",
       "My grandma could sling better than you. You're a joke.",
     ],
-    [Action.Accept]:[],
-    [Action.Decline]: []
+    [Action.Accept]: [],
+    [Action.Decline]: [],
   },
   [PlayerStatus.BeingDrugged]: {
-    [Action.Run]:[],
+    [Action.Run]: [],
     [Action.Fight]: [],
-    [Action.Pay]:[],
+    [Action.Pay]: [],
     [Action.Accept]: [
       "Oh, ho, ho! You're in for a ride! Buckle up, buttercup, the stars await!",
       "Zing! Zap! Off you go! Don't tell the elf lords where you got 'em, capisce?",
@@ -346,16 +336,11 @@ const encounterSentences: Record<PlayerStatus, Record<Action, string[]>> = {
       "No? Too scared? Bah! More cosmic journeys for me!",
       "Ah, you're missing out! These shrooms could make even a troll smile!",
       "Suit yourself, but when the sky calls, don't come crying for my stash!",
-
     ],
-  }
-}
+  },
+};
 
-export function getSentence(
-  status: PlayerStatus,
-  action: Action
-): string {
-
-  const sentences = encounterSentences[status][action]
-  return sentences[getRandomIdx(sentences.length)]
+export function getSentence(status: PlayerStatus, action: Action): string {
+  const sentences = encounterSentences[status][action];
+  return sentences[getRandomIdx(sentences.length)];
 }

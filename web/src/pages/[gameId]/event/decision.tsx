@@ -19,9 +19,7 @@ import CashIndicator from "@/components/player/CashIndicator";
 import HealthIndicator from "@/components/player/HealthIndicator";
 import { Encounter } from "@/generated/graphql";
 import { DollarBag, Fist, Flipflop, Heart, Siren } from "@/components/icons";
-import {
-  selectSong,
-} from "@/hooks/media";
+import { selectSong } from "@/hooks/media";
 
 type CombatLog = {
   text: string;
@@ -194,24 +192,24 @@ export default function Decision() {
               break;
           }
           break;
-          case Action.Accept:
-            addCombatLog({
-              text: "You nod in agreement, accepting the offer with a mix of curiosity and caution.",
-              color: "neon.400",
-              icon: DollarBag,
-            });
-            setSentence(getSentence(playerEntity!.status, Action.Accept));
-            playSound(Sounds.Mushroom); 
-            break;
-          case Action.Decline:
-            addCombatLog({
-              text: "You shake your head firmly, declining the offer and preparing for any fallout.",
-              color: "neon.400",
-              icon: DollarBag,
-            });
-            setSentence(getSentence(playerEntity!.status, Action.Decline));
-            playSound(Sounds.Run); 
-            break;
+        case Action.Accept:
+          addCombatLog({
+            text: "You nod in agreement, accepting the offer with a mix of curiosity and caution.",
+            color: "neon.400",
+            icon: DollarBag,
+          });
+          setSentence(getSentence(playerEntity!.status, Action.Accept));
+          playSound(Sounds.Mushroom);
+          break;
+        case Action.Decline:
+          addCombatLog({
+            text: "You shake your head firmly, declining the offer and preparing for any fallout.",
+            color: "neon.400",
+            icon: DollarBag,
+          });
+          setSentence(getSentence(playerEntity!.status, Action.Decline));
+          playSound(Sounds.Run);
+          break;
       }
 
       // setIsPaying(false);
@@ -270,7 +268,7 @@ export default function Decision() {
           break;
 
         case Outcome.Drugged:
-          selectSong('Dream Catcher');
+          selectSong("Dream Catcher");
           // consequenceEvent.dmgDealt > 0 &&
           //   addCombatLog({
           //     text: `You dealt ${consequenceEvent.dmgDealt}HP!`,
@@ -367,77 +365,74 @@ export default function Decision() {
 
           <Box minH="60px" />
 
-          { !PlayerStatus.BeingDrugged ? (
-                      <Footer position={["fixed", "absolute"]} p={["8px !important", "0"]}>
-                      <Button
-                        w="full"
-                        px={["auto","20px"]}
-                        isDisabled={isRunning || isPaying}
-                        isLoading={isFigthing}
-                        onClick={() => {
-                          setIsFigthing(true);
-                          onDecision(Action.Fight);
-                        }}
-                      >
-                        Fight
-                      </Button>
-          
-                      <Button
-                        w="full"
-                        px={["auto","20px"]}
-                        isDisabled={isPaying || isFigthing}
-                        isLoading={isRunning}
-                        onClick={() => {
-                          setIsRunning(true);
-                          onDecision(Action.Run);
-                        }}
-                      >
-                        Run
-                      </Button>
-                      <Button
-                        w="full"
-                        px={["auto","20px"]}
-                        isDisabled={isRunning || isFigthing}
-                        isLoading={isPaying}
-                        onClick={() => {
-                          setIsPaying(true);
-                          onDecision(Action.Pay);
-                        }}
-                      >
-                        PAY
-                      </Button>
-                    </Footer>
-          )
-           : ( 
+          {!PlayerStatus.BeingDrugged ? (
+            <Footer position={["fixed", "absolute"]} p={["8px !important", "0"]}>
+              <Button
+                w="full"
+                px={["auto", "20px"]}
+                isDisabled={isRunning || isPaying}
+                isLoading={isFigthing}
+                onClick={() => {
+                  setIsFigthing(true);
+                  onDecision(Action.Fight);
+                }}
+              >
+                Fight
+              </Button>
 
-          <Footer position={["fixed", "absolute"]} p={["8px !important", "0"]}>
-          <Button
-              w="full"
-              px={["auto","20px"]}
-              isDisabled={isDeclining}
-              isLoading={isAccepting}
-              onClick={() => {
-                setIsAccepting(true);
-                onDecision(Action.Accept);
-              }}
-            >
-              Accept
-            </Button>
-            <Button
-              w="full"
-              px={["auto","20px"]}
-              isDisabled={isAccepting}
-              isLoading={isDeclining}
-              onClick={() => {
-                setIsDeclining(true);
-                onDecision(Action.Decline);
-              }}
-            >
-              Decline
-            </Button>
-          </Footer>
-           )}
-
+              <Button
+                w="full"
+                px={["auto", "20px"]}
+                isDisabled={isPaying || isFigthing}
+                isLoading={isRunning}
+                onClick={() => {
+                  setIsRunning(true);
+                  onDecision(Action.Run);
+                }}
+              >
+                Run
+              </Button>
+              <Button
+                w="full"
+                px={["auto", "20px"]}
+                isDisabled={isRunning || isFigthing}
+                isLoading={isPaying}
+                onClick={() => {
+                  setIsPaying(true);
+                  onDecision(Action.Pay);
+                }}
+              >
+                PAY
+              </Button>
+            </Footer>
+          ) : (
+            <Footer position={["fixed", "absolute"]} p={["8px !important", "0"]}>
+              <Button
+                w="full"
+                px={["auto", "20px"]}
+                isDisabled={isDeclining}
+                isLoading={isAccepting}
+                onClick={() => {
+                  setIsAccepting(true);
+                  onDecision(Action.Accept);
+                }}
+              >
+                Accept
+              </Button>
+              <Button
+                w="full"
+                px={["auto", "20px"]}
+                isDisabled={isAccepting}
+                isLoading={isDeclining}
+                onClick={() => {
+                  setIsDeclining(true);
+                  onDecision(Action.Decline);
+                }}
+              >
+                Decline
+              </Button>
+            </Footer>
+          )}
         </VStack>
       </HStack>
     </Layout>
