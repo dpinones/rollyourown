@@ -1,7 +1,7 @@
 {
   "world": {
     "name": "dojo::world::world",
-    "address": "0x3387eb395eec4ace2db0a97192940c05cd644f0abee17122579605eeeaacb8a",
+    "address": "0x5032bd4928e93b307934bde8164d88bef42bd4618893d7184f7c9ef26118c9e",
     "class_hash": "0x5ac623f0c96059936bd2d0904bdd31799e430fe08a0caff7a5f497260b16497",
     "abi": [
       {
@@ -948,8 +948,8 @@
   "contracts": [
     {
       "name": "rollyourown::systems::decide::decide",
-      "address": "0x513e8a833b22e0e8fc32635427db3531166742cad938d0473b5f2342b8d670d",
-      "class_hash": "0x157ce4bfd0c987c9f79e1ddab2a225d24510f69c809b7916fe553e6c914590d",
+      "address": "0x7885cdcd5e277bd13a1708b9de5816b87a4b9bcb226887f6eafcca83a731b05",
+      "class_hash": "0x3f90a21adef1a42013fdac86a27d65368f1042a3c7c64c338b1f926df319705",
       "abi": [
         {
           "type": "impl",
@@ -1305,8 +1305,8 @@
     },
     {
       "name": "rollyourown::systems::lobby::lobby",
-      "address": "0x49edd91ee46f739b4ef1d945fc462c686fbdbb077a99d420f85e7c3d497795f",
-      "class_hash": "0xe00ffb0a8dafc6b9fcec485e18f16f282e4c0d5a982541e554894b39769b1b",
+      "address": "0x191237be41c50b892f960aa84eef4c372a42875ee7c605b8d1aa57c95da9940",
+      "class_hash": "0x28d2a00765ad45765df5e9e285ae7eaa9f80766c9f03a7aa0341fd2832470c",
       "abi": [
         {
           "type": "impl",
@@ -1560,7 +1560,7 @@
     },
     {
       "name": "rollyourown::systems::ryo::ryo",
-      "address": "0x5b9d8d94a201bd82b8dc10f393a4187c9a513aba1d105d6b3b4a75c3e8299ad",
+      "address": "0x39174f9bc96af8926a50361c5c8b5ab61bb0f5a3b0f053af8cce779a008499b",
       "class_hash": "0x7e03c1da2480ff24f176bdc455621edbe70f116958d76f573999dd4c782cec",
       "abi": [
         {
@@ -1701,8 +1701,8 @@
     },
     {
       "name": "rollyourown::systems::shop::shop",
-      "address": "0x369cb17d0b420599756dc27c11e5be1eb85182b36cb9b12f923aec7b6959f43",
-      "class_hash": "0x51bde69ff8dc62d493b5418c06493d0c3279d52cf5dbef7b539e412d689126f",
+      "address": "0x6fdfd9f7c5f0a18cbff1ccddba368d58fdf613a5825f01f34db061034128bc7",
+      "class_hash": "0x10f423163a56d7f9bcd3c1a0d3600bb52d7d1276d8aca0bbae6b1746ca4585a",
       "abi": [
         {
           "type": "impl",
@@ -2043,7 +2043,7 @@
     },
     {
       "name": "rollyourown::systems::trade::trade",
-      "address": "0x37539cbd5f049814c1f0e7890e4b3acd656c4bbd45776c81f24014cf50cb0ef",
+      "address": "0x1d1280e2b46a468788af368afb51e9c2d6965aaf06415935ff628f9622598a8",
       "class_hash": "0x6744678a2d684a767ffb50b0405063e23b24251a5f1b53da59702d7446ae0",
       "abi": [
         {
@@ -2363,8 +2363,8 @@
     },
     {
       "name": "rollyourown::systems::travel::travel",
-      "address": "0x4c24c51ab65c7a5ea606ce4b873f85481c0327c14fca2941353a408ce689e10",
-      "class_hash": "0x513af83db8d45837db184c21026fede166b198b647d30d95ab10403f1e91053",
+      "address": "0x44bc8d04bdf739e01cfb641547e07a798b198d66647dd5cd4dd682a99aa7cb7",
+      "class_hash": "0x4cf91408dd5c8778b8ecc90b138dd031821a44690631969e0692d0256e3297",
       "abi": [
         {
           "type": "impl",
