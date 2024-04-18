@@ -19,6 +19,9 @@ import CashIndicator from "@/components/player/CashIndicator";
 import HealthIndicator from "@/components/player/HealthIndicator";
 import { Encounter } from "@/generated/graphql";
 import { DollarBag, Fist, Flipflop, Heart, Siren } from "@/components/icons";
+import {
+  selectSong,
+} from "@/hooks/media";
 
 type CombatLog = {
   text: string;
@@ -267,7 +270,7 @@ export default function Decision() {
           break;
 
         case Outcome.Drugged:
-          playSound(Sounds.Ooo);
+          selectSong('Dream Catcher');
           // consequenceEvent.dmgDealt > 0 &&
           //   addCombatLog({
           //     text: `You dealt ${consequenceEvent.dmgDealt}HP!`,
